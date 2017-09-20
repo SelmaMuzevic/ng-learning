@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoucleComponent implements OnInit {
   tableau:string[] = ["Golf", "Jaguar", "Mazda", "Peugeot"];
+  
   constructor() { }
 
   ngOnInit() {
