@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { TemplateComponent } from "./template/template.component";
 import { AppComponent } from './app.component';
 import { BoucleComponent } from './boucle/boucle.component';
+import { TodolistComponent } from './todolist/todolist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateComponent,
-    BoucleComponent
+    BoucleComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
