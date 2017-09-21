@@ -1,7 +1,9 @@
-<ng-container *ngFor="let item of tableau; index as clef">
+<ul>
+    <li *ngFor="let item of liste; index as clef">
+        {{item}}
+        <button (click)="removeTodo(clef)">X</button>
+    </li>
+</ul>
 
-    <p *ngIf="todo">
-        {{clef}} {{item}}
-    </p>
-
-</ng-container>
+<input type="text" [(ngModel)]="newTodo">
+<button (click)="addTodo()">Add</button>
