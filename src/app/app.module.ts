@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BoucleComponent } from './boucle/boucle.component';
 import { TodolistComponent } from './todolist/todolist.component';
 import { TodoService } from './shared/todo.service';
+import { CompteurService } from './shared/compteur.service';
+import { TodoAjaxService } from './shared/todo.ajax.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TodoService } from './shared/todo.service';
     FormsModule
   ],
   providers: [
-    TodoService
+    TodoService,
+    CompteurService,
+    TodoAjaxService
   ],
   bootstrap: [AppComponent]
 })

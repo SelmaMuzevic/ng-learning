@@ -15,6 +15,15 @@ liste:string[] = [
     "Raisins"
     ];
 
+     /*
+        On définit dans notre service des méthodes qui
+        viendront intéragir avec le modèle pour 
+        de l'ajout/suppression/modification etc.
+        Ces méthodes seront ensuite appellées par les
+        Component et Service qui se serviront de ce
+        Service ci
+      */
+
 getTodos():string[] {
     return this.liste;
 }
