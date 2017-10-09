@@ -13,3 +13,15 @@
 <app-todo *ngIf="selectedPage === 'todo'"></app-todo>
 <app-todo-second *ngIf="selectedPage === 'todo-second'"></app-todo-second>
 <app-liste-chien *ngIf="selectedPage === 'chien'"></app-liste-chien>
+
+<nav>
+    <ul>
+        <li><a routerLink="/boucle" routerLinkActive="active">Boucle</a></li>
+        <li><a routerLink="/template" routerLinkActive="active">Template</a></li>
+        <li><a routerLink="/todo" routerLinkActive="active">Todo</a></li>
+        <li><a routerLink="/todo-second" routerLinkActive="active">Todo Second</a></li>
+        <li><a routerLink="/chiens" routerLinkActive="active">Chiens</a></li>
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>

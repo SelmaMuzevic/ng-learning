@@ -13,6 +13,8 @@ import { CompteurService } from './shared/compteur/compteur.service';
 import { TodoAjaxService } from './shared/todo-ajax.service';
 import { ListeChienComponent } from './liste-chien/liste-chien.component';
 import { ChienService } from './shared/chien/chien.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FicheChienComponent } from './fiche-chien/fiche-chien.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ChienService } from './shared/chien/chien.service';
     BoucleComponent,
     TodoComponent,
     TodoSecondComponent,
-    ListeChienComponent
+    ListeChienComponent,
+    PageNotFoundComponent,
+    FicheChienComponent
   ],
 
   imports: [
