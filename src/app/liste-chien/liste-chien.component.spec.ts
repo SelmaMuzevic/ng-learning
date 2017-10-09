@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoucleComponent } from './boucle.component';
+import { ListeChienComponent } from './liste-chien.component';
 
-describe('BoucleComponent', () => {
-  let component: BoucleComponent;
-  let fixture: ComponentFixture<BoucleComponent>;
+describe('ListeChienComponent', () => {
+  let component: ListeChienComponent;
+  let fixture: ComponentFixture<ListeChienComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BoucleComponent ]
+      declarations: [ ListeChienComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BoucleComponent);
+    fixture = TestBed.createComponent(ListeChienComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,4 +23,3 @@ describe('BoucleComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-

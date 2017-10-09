@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CompteurService } from '../shared/compteur.service';
+import { CompteurService } from '../shared/compteur/compteur.service';
 
 @Component({
   selector: 'app-boucle',

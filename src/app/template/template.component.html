@@ -1,6 +1,6 @@
 <!-- Les parenthèses indiques des valeurs allant de
 la vue vers le component (ici, le click sur le h1 
-déclenche la méthode AppComponent.methode()) -->
+déclenche la méthode TemplateComponent.methode()) -->
 <h1 (click)="methode()">{{title}}</h1>
 <!-- Les crochets indique des valeurs allant du
 component vers la vue
@@ -25,20 +25,17 @@ de ces deux input -->
 <input type="number" [(ngModel)]="b"> {{a+b}}
 
 <p>
-    <label>Nom:</label>
+    <label>Nom :</label>
     <input type="text" [(ngModel)]="personne.nom">
 </p>
-
 <p>
-    <label>Prenom:</label>
+    <label>Prénom :</label>
     <input type="text" [(ngModel)]="personne.prenom">
 </p>
-
 <p>
-    <label>Age:</label>
+    <label>Age :</label>
     <input type="number" [(ngModel)]="personne.age">
 </p>
-
 <label>J'ai un chien</label>
 <input type="checkbox" [(ngModel)]="chienForm">
 
@@ -53,3 +50,6 @@ de ces deux input -->
     </p>
 </section>
 <button (click)="afficher()">Afficher</button>
+
+
+<app-boucle></app-boucle>
