@@ -13,8 +13,10 @@ export class AppComponent {
   constructor(private cs:CompteurService) { }
   
     ngOnInit() {
-      console.log('compte initial dans app : ' +this.cs.compte);
+      console.log('compte initial dans app : '
+      +this.cs.compte);
       this.cs.increment();
-      console.log('compte final dans app : ' +this.cs.compte);
+      console.log('compte final dans app : ' 
+      +this.cs.compte);
     }
 }
