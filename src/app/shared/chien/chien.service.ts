@@ -21,4 +21,9 @@ export class ChienService {
     return this.http.delete<void>(this.urlAPI+'/'+id).toPromise();
   }
 
+
+  getById(id:number):Promise<Chien> {
+    return this.http.get<Chien>(this.urlAPI+'/'+id).toPromise();
+  }
+
 }

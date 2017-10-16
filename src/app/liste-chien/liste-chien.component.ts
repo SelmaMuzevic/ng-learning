@@ -19,17 +19,17 @@ export class ListeChienComponent implements OnInit {
   constructor(private chienService:ChienService) { }
 
   ngOnInit() {
-    this.chienService.getAll()
+    this.chienService.getAllChien()
     .then((chiens) => this.listeChien = chiens);
   }
 
   ajouter() {
-    this.chienService.add(this.nouveauChien)
+    this.chienService.addChien(this.nouveauChien)
     .then((chien) => this.listeChien.push(chien));
   }
 
   supprimer(id:number) {
-    this.chienService.delete(id)
+    this.chienService.removeChien(id)
     .then(() => this.ngOnInit());
   }
 }

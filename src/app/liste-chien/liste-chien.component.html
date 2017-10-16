@@ -14,31 +14,27 @@
     <tbody>
         <tr *ngFor="let chien of listeChien">
             <td>{{chien.id}}</td>
-            <td>{{chien.nom}}</td>
+            <td>
+                <a [routerLink]="['/chien', chien.id]">
+          {{chien.nom}}
+        </a>
+            </td>
             <td>{{chien.race}}</td>
             <td>{{chien.dateNaissance | date:'dd/MM/yyyy'}}</td>
             <td>
                 <button (click)="supprimer(chien.id)">X</button>
             </td>
         </tr>
-        <tr>
-            <td>
-                #
-            </td>
-            <td>
-                <input type="text" [(ngModel)]="nouveauChien.nom" />
-            </td>
-            <td>
-                <input type="text" [(ngModel)]="nouveauChien.race" />
-            </td>
-            <td>
-                <input type="date" [(ngModel)]="nouveauChien.dateNaissance" />
-            </td>
-            <td>
-                <button (click)="ajouter()">Ajouter</button>
-            </td>
-        </tr>
-
     </tbody>
 
 </table>
+<!-- Ici, on dit à notre component ajout-chien qu'il
+aura comme valeur de sa variable numeroChien la taille
+de la liste de chien qu'on a actuellement dans le 
+component liste-chien + 1
+On lui dit ensuite que lorsque l'event onAdd du component
+ajout-chien sera déclenché, alors on déclenchera la 
+méthode ajouter() du component liste-chien en lui
+fournissant en argument $event qui correspond la valeur
+fournie dans le emit() du onAdd du ajout-chien -->
+<app-ajout-chien [numeroChien]="listeChien.length + 1" (onAdd)="ajouter($event)"></app-ajout-chien>
