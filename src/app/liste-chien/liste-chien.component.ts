@@ -8,28 +8,28 @@ import { ChienService } from '../shared/chien/chien.service';
   styleUrls: ['./liste-chien.component.css']
 })
 export class ListeChienComponent implements OnInit {
-  listeChien:Chien[];
-  //Ne pas oublier d'initialiser le chien du formulaire
-  nouveauChien:Chien={
-    nom:'',
-    race:'',
-    dateNaissance:null
-  };
+  listeChien:Chien[] = [];
+  aModifier:Chien;
 
   constructor(private chienService:ChienService) { }
 
   ngOnInit() {
-    this.chienService.getAllChien()
+    this.chienService.getAll()
     .then((chiens) => this.listeChien = chiens);
   }
 
-  ajouter() {
-    this.chienService.addChien(this.nouveauChien)
+  ajouter(chien:Chien) {
+    this.chienService.add(chien)
     .then((chien) => this.listeChien.push(chien));
   }
 
   supprimer(id:number) {
-    this.chienService.removeChien(id)
+    this.chienService.delete(id)
     .then(() => this.ngOnInit());
   }
+
+  // modifier(chien:Chien) {
+  //   this.chienService.update(chien.id,chien)
+  //   .then(() => console.log(chien));
+  // }
 }

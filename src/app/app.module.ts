@@ -18,6 +18,7 @@ import { appRoutes } from './app.routes';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FicheChienComponent } from './fiche-chien/fiche-chien.component';
 import { AjoutChienComponent } from './liste-chien/ajout-chien/ajout-chien.component';
+import { ModifierChienComponent } from './liste-chien/modifier-chien/modifier-chien.component';
 
 @NgModule({
   declarations: [
@@ -29,21 +30,18 @@ import { AjoutChienComponent } from './liste-chien/ajout-chien/ajout-chien.compo
     ListeChienComponent,
     PageNotFoundComponent,
     FicheChienComponent,
-    AjoutChienComponent
+    AjoutChienComponent,
+    ModifierChienComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-  // module applicatif AppRoutingModule permettant 
-  // d'ajouter la fonctionnalité de routage à notre application : 
     RouterModule.forRoot(appRoutes)
   ],
-
-
   /*
   Pour pouvoir être injecté, un service a besoin d'être
-  providé. On peut mettre une propriété providers sur
+  provid-é. On peut mettre une propriété providers sur
   les components ou le app.module. L'endroit où se trouve
   le provider d'un service va déterminer quand en sera
   faite une nouvelle instance et quand utiliser la même
@@ -58,7 +56,6 @@ import { AjoutChienComponent } from './liste-chien/ajout-chien/ajout-chien.compo
     TodoAjaxService,
     ChienService
   ],
-
   bootstrap: [AppComponent]
 })
 export class AppModule { }

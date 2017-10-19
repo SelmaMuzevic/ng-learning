@@ -1,4 +1,4 @@
-<select [(ngModel)]="selectedPage">
+<!--<select [(ngModel)]="selectedPage">
     <option value="boucle">Boucle</option>
     <option value="template">Template</option>
     <option value="todo">Todo List</option>
@@ -12,13 +12,14 @@
 
 <app-todo *ngIf="selectedPage === 'todo'"></app-todo>
 <app-todo-second *ngIf="selectedPage === 'todo-second'"></app-todo-second>
-<app-liste-chien *ngIf="selectedPage === 'chien'"></app-liste-chien>
+<app-liste-chien *ngIf="selectedPage === 'chien'"></app-liste-chien>-->
+
 
 <nav>
     <ul>
         <!-- liens dans template vers route specifique -->
         <li><a routerLink="/boucle" routerLinkActive="active">Boucle</a></li>
-        <li><a routerLink="/template" routerLinkActive="active">Template</a></li>
+        <li><a routerLink="/template" routerLinkActive="active">template</a></li>
         <li><a routerLink="/todo" routerLinkActive="active">Todo</a></li>
         <li><a routerLink="/todo-second" routerLinkActive="active">Todo Second</a></li>
         <li><a routerLink="/chiens" routerLinkActive="active">Chiens</a></li>
