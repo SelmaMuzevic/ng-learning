@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Chien } from '../shared/chien';
 import { ChienService } from '../shared/chien/chien.service';
 
+
 @Component({
   selector: 'app-liste-chien',
   templateUrl: './liste-chien.component.html',
@@ -13,19 +14,21 @@ export class ListeChienComponent implements OnInit {
 
   constructor(private chienService:ChienService) { }
 
+// modifier le component pour faire qu'il utilise les observable plutôt que la promise
+// a la place de .then on mettra .subscribe
   ngOnInit() {
     this.chienService.getAll()
-    .then((chiens) => this.listeChien = chiens);
+    .subscribe((chiens) => this.listeChien = chiens);
   }
 
   ajouter(chien:Chien) {
     this.chienService.add(chien)
-    .then((chien) => this.listeChien.push(chien));
+    .subscribe((chien) => this.listeChien.push(chien));
   }
 
   supprimer(id:number) {
     this.chienService.delete(id)
-    .then(() => this.ngOnInit());
+    .subscribe(() => this.ngOnInit());
   }
 
   // modifier(chien:Chien) {

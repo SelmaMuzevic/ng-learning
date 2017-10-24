@@ -1,0 +1,22 @@
+<form (submit)="submit()" [FormGroup]="formulaire">
+    <p>
+        <label>Nom:</label>
+        <input type="text" FormControlName="nom">
+        <span *ngIf="formulaire.get('nom').dirty &&
+                 formulaire.get('nom').invalid">
+    </span>
+    </p>
+    <p>
+        <label>Prénom:</label>
+        <input type="text" FormControlName="prenom">
+    </p>
+    <p>
+        <label>Age:</label>
+        <input type="number" FormControlName="age">
+    </p>
+    <p>
+        <label></label>
+        <input type="" FormControlName="">
+    </p>
+
+</form>

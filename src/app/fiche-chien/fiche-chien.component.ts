@@ -4,6 +4,9 @@ import { Chien } from '../shared/chien';
 import { ActivatedRoute } from '@angular/router';
 import { ChienService } from '../shared/chien/chien.service';
 
+import {  } from "rxjs/add/operator/mergeMap";
+import {  } from "rxjs/add/operator/filter";
+
 @Component({
   selector: 'app-fiche-chien',
   templateUrl: './fiche-chien.component.html',
@@ -22,22 +25,32 @@ export class FicheChienComponent implements OnInit {
     //On peut récupérer les paramètres de l'url sous
     //forme d'un Observable depuis le ActivatedRoute
     this.route.params
-    .subscribe((params) => {
-      //Si le params est de type number on fait l'appel
-      // au service
-      if(parseInt(params.id) !== NaN) {
-        this.chienService.getById(params.id)
-        .then((chien) => this.chien = chien)
-        //Si le service renvoie une erreur
-        .catch(() => this.chien = null);
-      }else {
-        this.chien = null
-      }
-    });
-    
+.filter((params) => parseInt(params.id) !== NaN)
+.mergeMap((params) => 
+this.chienService.getById(params.id))
+.subscribe((chien) => this.chien = chien);
 
   }
+}
+
+
+
+  //   .subscribe((params) => {
+  //     //Si le params est de type number on fait l'appel
+  //     // au service
+  //     if(parseInt(params.id) !== NaN) {
+  //       this.chienService.getById(params.id)
+  //       .subscribe((chien) => this.chien = chien)
+
+  //       //Si le service renvoie une erreur
+       
+  //     }else {
+  //       this.chien = null
+  //     }
+  //   });
+    
+
+  // }
 
   
 
-}

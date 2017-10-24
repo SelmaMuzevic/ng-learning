@@ -19,6 +19,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FicheChienComponent } from './fiche-chien/fiche-chien.component';
 import { AjoutChienComponent } from './liste-chien/ajout-chien/ajout-chien.component';
 import { ModifierChienComponent } from './liste-chien/modifier-chien/modifier-chien.component';
+import { ModelFormsComponent } from './model-forms/model-forms.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ModifierChienComponent } from './liste-chien/modifier-chien/modifier-ch
     PageNotFoundComponent,
     FicheChienComponent,
     AjoutChienComponent,
-    ModifierChienComponent
+    ModifierChienComponent,
+    ModelFormsComponent
   ],
   imports: [
     BrowserModule,
