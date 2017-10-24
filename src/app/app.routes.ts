@@ -7,6 +7,7 @@ import { TodoSecondComponent } from "./todo-second/todo-second.component";
 import { ListeChienComponent } from "./liste-chien/liste-chien.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { FicheChienComponent } from "./fiche-chien/fiche-chien.component";
+import { ModelFormsComponent } from "./model-forms/model-forms.component";
 
 
 /*
@@ -23,6 +24,7 @@ export const appRoutes:Routes = [
     {path: 'todo-second', component: TodoSecondComponent},
     {path: 'chiens', component: ListeChienComponent},
     {path: 'chien/:id', component: FicheChienComponent},
+    {path: 'model', component: ModelFormsComponent},
     //On peut faire des redirections sur certaines routes
     {path: '', pathMatch:'full' , redirectTo: '/chiens'},
     //Cette route est la wildcare, elle match toutes les
@@ -30,5 +32,4 @@ export const appRoutes:Routes = [
     //peine de la voir prendre le dessus sur toutes les
     //autres. On peut s'en servir pour faire un 404
     {path: '**', component:PageNotFoundComponent}
-
 ];

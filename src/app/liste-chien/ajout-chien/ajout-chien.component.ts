@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Chien } from "../../shared/chien";
+import { Chien } from '../../shared/chien';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ajout-chien',
@@ -7,18 +8,16 @@ import { Chien } from "../../shared/chien";
   styleUrls: ['./ajout-chien.component.css']
 })
 export class AjoutChienComponent implements OnInit {
-nouveauChien:Chien;
-
-/**
+  nouveauChien:Chien;
+  /**
    * Le @Input() dit au component que LA variable juste
    * en dessous vient de l'extérieur du component. Il
    * rend disponible sur la balise component (<app-ajout-chien>)
    * un attribut du même nom que la variable décorée
    */
-@Input()
-numeroChien:number = 0;
-
-/**
+  @Input()
+  numeroChien:number = 0;
+  /**
    * le @Output() rend disponible sur la balise du component
    * un event du même nom que la variable décorée par
    * le output (ou alors du même nom que la valeur mise 
@@ -30,16 +29,22 @@ numeroChien:number = 0;
    */
   @Output("onAdd")
   eventAjout:EventEmitter<Chien> = new EventEmitter();
+  formulaire:FormGroup;
 
-  constructor() {
+  constructor(private fb:FormBuilder) { 
     this.nouveauChien = {
-      nom: '',
+      nom:'',
       race: '',
       dateNaissance: null
     };
-   }
+  }
 
   ngOnInit() {
+    this.formulaire = this.fb.group({
+      nom:'',
+      race:'',
+      dateNaissance:null
+    });
   }
 
   ajouter() {
@@ -49,8 +54,7 @@ numeroChien:number = 0;
     avec le chien en paramètre, et celui ci pourra 
     être récupéré par le parent, quel qu'il soit
     */
-    this.eventAjout.emit(this.nouveauChien);
+    this.eventAjout.emit(this.formulaire.value);
   }
-
 
 }

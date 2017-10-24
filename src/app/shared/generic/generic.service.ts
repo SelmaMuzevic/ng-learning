@@ -24,7 +24,10 @@ export abstract class GenericService<T> {
   delete(id:number):Observable<void> {
     return this.http.delete<void>(this.urlAPI+'/'+id);
   }
-  
+  update(id:number, entity:T):Observable<T> {
+    return this.http.patch<T>(this.urlAPI+'/'+id,
+     entity);
+  }
 
   
 

@@ -1,8 +1,10 @@
 {
-  "petit-chien": [
+  "chien": [
     {
-      "race": "corgi",
-      "id": 2
+      "nom": "hello",
+      "race": "test",
+      "dateNaissance": "2017-12-31",
+      "id": 3
     }
   ],
   "todo": [

@@ -4,8 +4,8 @@ import { Chien } from '../shared/chien';
 import { ActivatedRoute } from '@angular/router';
 import { ChienService } from '../shared/chien/chien.service';
 
-import {  } from "rxjs/add/operator/mergeMap";
-import {  } from "rxjs/add/operator/filter";
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'app-fiche-chien',
@@ -25,32 +25,16 @@ export class FicheChienComponent implements OnInit {
     //On peut récupérer les paramètres de l'url sous
     //forme d'un Observable depuis le ActivatedRoute
     this.route.params
-.filter((params) => parseInt(params.id) !== NaN)
-.mergeMap((params) => 
-this.chienService.getById(params.id))
-.subscribe((chien) => this.chien = chien);
-
-  }
-}
-
-
-
-  //   .subscribe((params) => {
-  //     //Si le params est de type number on fait l'appel
-  //     // au service
-  //     if(parseInt(params.id) !== NaN) {
-  //       this.chienService.getById(params.id)
-  //       .subscribe((chien) => this.chien = chien)
-
-  //       //Si le service renvoie une erreur
-       
-  //     }else {
-  //       this.chien = null
-  //     }
-  //   });
+    //On utilise l'operator filter pour que l'observable params n'émette que lorsque l'id est un nombre au dessus de 0
+    .filter(params => parseInt(params.id) > 0)
+    //On utilise l'operator mergeMap pour faire que lorsque l'observable params emet, on utilise sa valeur pour déclencher un autre observable (le getById du chienService) qui prendra la place du params observable
+    .mergeMap((params) => 
+              this.chienService.getById(params.id))
+    //On subscribe sur l'observable du getById
+    .subscribe((chien) => this.chien = chien);
     
 
-  // }
+  }
 
-  
+}  
 
